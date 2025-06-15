@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SupplierController extends Controller
+class SablonHistoryContoller extends Controller
 {
     public function index()
     {
-        return view('pages.operational.supplier.index');
+        return view('pages.history.sablonHistory.index');
     }
 }
