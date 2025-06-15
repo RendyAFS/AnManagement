@@ -1,7 +1,7 @@
 <div x-data="{ isOpen: false }" class="flex sm:hidden">
     <!-- Button Trigger -->
     <button @click="isOpen = true"
-        class="fixed bottom-3 right-3 bg-colordark text-colorlight dark:bg-colorlight dark:text-colordark p-3 rounded-full z-50">
+        class="fixed bottom-10 right-3 bg-colordark text-colorlight dark:bg-colorlight dark:text-colordark p-3 rounded-full z-50">
         <x-lucide-menu class="w-5 h-5" />
     </button>
 

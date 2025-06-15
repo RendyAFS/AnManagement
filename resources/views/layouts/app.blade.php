@@ -52,6 +52,7 @@
                 {{ $slot }}
                 @include('layouts.menu')
             </main>
+            @include('layouts.footer')
         </div>
     </div>
 

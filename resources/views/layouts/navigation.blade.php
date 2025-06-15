@@ -1,4 +1,5 @@
-<nav class="bg-white dark:bg-colordark drop-shadow-md py-4 px-2 flex justify-between sm:justify-end  transition-colors duration-500 ease-in-out">
+<nav
+    class="bg-colorlight dark:bg-colordark drop-shadow-md py-4 px-2 flex justify-between sm:justify-end  transition-colors duration-500 ease-in-out">
     <div class="flex sm:hidden items-center justify-between">
         <img src="{{ asset('assets/logo-brand.png') }}" alt="Logo" class="h-8 w-auto me-2">
         <span class="text-xl font-bold">AnManagement</span>
@@ -49,10 +50,9 @@
                         </label>
                     </div>
 
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
                         @csrf
-                        <x-dropdown-link :href="route('logout')"
-                            onclick="event.preventDefault(); this.closest('form').submit();">
+                        <x-dropdown-link href="#" onclick="confirmLogout(event)">
                             <div class="flex text-colorred font-bold">
                                 <x-lucide-log-out class="w-5 h-5 me-2 text-re" />
                                 Log out
@@ -95,3 +95,33 @@
         </label>
     </div>
 </nav>
+
+<script>
+    function confirmLogout(event) {
+        event.preventDefault();
+
+        const isDark = document.documentElement.classList.contains('dark');
+        const confirmColor = isDark ? '#EF4444' : '#FF3F33'; // merah tua vs terang
+        const cancelColor = isDark ? '#3B82F6' : '#4300FF'; // biru soft vs neon
+
+        Swal.fire({
+            title: 'Are you sure you want to exit? Yakin ingin keluar?',
+            text: "Your session will be terminated.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: confirmColor,
+            cancelButtonColor: cancelColor,
+            confirmButtonText: 'Yes, Log Out!',
+            cancelButtonText: 'Cancel',
+            background: isDark ? '#393E46' : '#EEEEEE',
+            customClass: {
+                popup: 'rounded-xl' // <- pakai class Tailwind di sini
+            },
+            color: isDark ? '#F6F6F6' : '#222222'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('logout-form').submit();
+            }
+        });
+    }
+</script>
