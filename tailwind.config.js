@@ -18,15 +18,19 @@ export default {
             },
             colors: {
                 lightmode: {
-                    background: "#F6F6F6",
+                    background: "#EEEEEE",
                 },
                 darkmode: {
                     background: "#393E46",
                 },
-                fontdark: "#F6F6F6",
-                fontLight: "#222222",
+                fontlight: "#F6F6F6",
+                fontdark: "#222222",
                 primary: "#1DCD9F",
                 secondary: "#169976",
+                colordark: "#222831",
+                colorlight: "#FFFFFF",
+                colorlightgrey: "#EEEEEE",
+                colordarkgrey: "#3C3D37",
             },
         },
     },
