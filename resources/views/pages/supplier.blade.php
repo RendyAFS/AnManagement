@@ -1,5 +1,5 @@
 <x-app-layout>
     <div>
-        Page Dashboard
+        Page Supplier
     </div>
 </x-app-layout>
