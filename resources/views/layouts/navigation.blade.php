@@ -1,16 +1,15 @@
-<nav class="bg-white dark:bg-colordark drop-shadow-md py-4 px-2 flex justify-between">
-    <div class="flex items-center justify-between">
+<nav class="bg-white dark:bg-colordark drop-shadow-md py-4 px-2 flex justify-between sm:justify-end  transition-colors duration-500 ease-in-out">
+    <div class="flex sm:hidden items-center justify-between">
         <img src="{{ asset('assets/logo-brand.png') }}" alt="Logo" class="h-8 w-auto me-2">
         <span class="text-xl font-bold">AnManagement</span>
     </div>
     <div class="flex justify-end items-center">
-
         <!-- Settings Dropdown -->
         <div class="sm:flex sm:items-center">
             <x-dropdown align="right" width="48">
                 <x-slot name="trigger">
                     <button
-                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                         <div>{{ Auth::user()->name }}</div>
                         <div class="ms-1">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -24,7 +23,10 @@
 
                 <x-slot name="content">
                     <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
+                        <div class="flex">
+                            <x-lucide-circle-user-round class="w-5 h-5 me-2" />
+                            Profile
+                        </div>
                     </x-dropdown-link>
 
                     <!-- Dark Mode Toggle -->
@@ -51,7 +53,10 @@
                         @csrf
                         <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault(); this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            <div class="flex text-colorred font-bold">
+                                <x-lucide-log-out class="w-5 h-5 me-2 text-re" />
+                                Log out
+                            </div>
                         </x-dropdown-link>
                     </form>
                 </x-slot>
@@ -73,7 +78,16 @@
             <!-- Toggle Switch -->
             <div class="relative">
                 <input type="checkbox" class="sr-only" x-model="darkMode"
-                    @change="localStorage.setItem('theme', darkMode ? 'dark' : 'light'); document.documentElement.classList.toggle('dark', darkMode); lucide.createIcons();">
+                    @change="
+        localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+        document.documentElement.classList.add('transition-theme'); // trigger animation
+        setTimeout(() => {
+            document.documentElement.classList[darkMode ? 'add' : 'remove']('dark');
+            document.documentElement.classList.remove('transition-theme');
+        }, 10);
+        lucide.createIcons();
+    ">
+
                 <div class="block w-10 h-6 bg-gray-300 rounded-full dark:bg-gray-600"></div>
                 <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"
                     :class="darkMode ? 'translate-x-4' : ''"></div>

@@ -1,4 +1,4 @@
-<div x-data="{ isOpen: false }">
+<div x-data="{ isOpen: false }" class="flex sm:hidden">
     <!-- Button Trigger -->
     <button @click="isOpen = true"
         class="fixed bottom-3 right-3 bg-colordark text-colorlight dark:bg-colorlight dark:text-colordark p-3 rounded-full z-50">
@@ -31,7 +31,7 @@
                     {{-- Dashboard --}}
                     <a href="{{ route('dashboard') }}"
                         class="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg
-        bg-colorlight text-colordark dark:text-colorlight dark:bg-colordark
+        text-colordark dark:text-colorlight
         group transition-all duration-200
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight">
                         <x-lucide-layout-dashboard class="w-5 h-5 me-2" />
@@ -45,7 +45,7 @@
                     <button @click="open = !open"
                         class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium rounded-md
         transition-all duration-200
-        bg-colorlight text-colordark dark:text-colorlight dark:bg-colordark
+        text-colordark dark:text-colorlight
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                         <div class="flex items-center">
@@ -95,7 +95,7 @@
                     <button @click="open = !open"
                         class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium rounded-md
         transition-all duration-200
-        bg-colorlight text-colordark dark:text-colorlight dark:bg-colordark
+        text-colordark dark:text-colorlight
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                         <div class="flex items-center">
@@ -154,7 +154,7 @@
                     <button @click="open = !open"
                         class="w-full flex items-center justify-between px-4 py-2 text-sm font-medium rounded-md
         transition-all duration-200
-        bg-colorlight text-colordark dark:text-colorlight dark:bg-colordark
+        text-colordark dark:text-colorlight
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                         <div class="flex items-center">

@@ -23,12 +23,25 @@ export default {
                 darkmode: {
                     background: "#393E46",
                 },
+                // Font
                 fontlight: "#F6F6F6",
                 fontdark: "#222222",
+
+                // basic
                 primary: "#1DCD9F",
                 secondary: "#169976",
+
+                // Notif
+                colorred: "#FF3F33",
+                colorgreen: "#16C47F",
+                colorblue: "#4300FF",
+                coloryellow: "#FFD63A",
+
+                // theme
                 colordark: "#222831",
                 colorlight: "#FFFFFF",
+
+                // other
                 colorlightgrey: "#EEEEEE",
                 colordarkgrey: "#3C3D37",
             },

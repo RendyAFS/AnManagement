@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'AnManagemen') }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo-ico.ico') }}">
+
+    <title>{{ config('app.name', 'AnManagement') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -32,7 +34,10 @@
 </head>
 
 <body
-    class="font-sans antialiased bg-lightmode-background text-fontdark dark:bg-darkmode-background dark:text-fontlight h-screen overflow-hidden">
+    class="font-sans antialiased h-screen overflow-hidden
+           bg-lightmode-background text-fontdark dark:bg-darkmode-background dark:text-fontlight
+           transition-colors duration-500 ease-in-out">
+
     <div class="flex h-full">
         <!-- Sidebar (tetap fix dan tidak ikut scroll) -->
         @include('layouts.sidebar')
