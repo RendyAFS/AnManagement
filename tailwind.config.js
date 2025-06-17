@@ -3,12 +3,13 @@ import forms from "@tailwindcss/forms";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: "class", // hanya ini, tidak ada lightmode
+    darkMode: "class", // hanya class, tidak media query
 
     content: [
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
+        // "./resources/js/**/*.js",
     ],
 
     theme: {
@@ -27,7 +28,7 @@ export default {
                 fontlight: "#F6F6F6",
                 fontdark: "#222222",
 
-                // basic
+                // Basic
                 primary: "#1DCD9F",
                 secondary: "#169976",
 
@@ -37,11 +38,11 @@ export default {
                 colorblue: "#4300FF",
                 coloryellow: "#FFD63A",
 
-                // theme
+                // Theme
                 colordark: "#222831",
                 colorlight: "#FFFFFF",
 
-                // other
+                // Other
                 colorlightgrey: "#EEEEEE",
                 colordarkgrey: "#3C3D37",
             },

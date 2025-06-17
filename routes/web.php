@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/employee', [EmployeeController::class, 'index'])->name('employee');
     });
 
-    Route::prefix('/Configuration')->group(function () {
+    Route::prefix('/j')->group(function () {
         // picture
         Route::get('/picture', [PictureController::class, 'index'])->name('picture');
 

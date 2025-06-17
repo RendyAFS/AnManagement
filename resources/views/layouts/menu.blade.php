@@ -1,8 +1,8 @@
 <div x-data="{ isOpen: false }" class="flex sm:hidden">
     <!-- Button Trigger -->
     <button @click="isOpen = true"
-        class="fixed bottom-3 right-3 bg-colordark text-colorlight dark:bg-colorlight dark:text-colordark p-3 rounded-full z-50">
-        <x-lucide-menu class="w-5 h-5" />
+        class="fixed bottom-10 right-3 bg-colordark text-colorlight dark:bg-colorlight dark:text-colordark p-3 rounded-full z-50">
+        <i data-lucide="menu" class="w-5 h-5"></i>
     </button>
 
     <!-- Modal Overlay -->
@@ -21,7 +21,7 @@
                 <img src="{{ asset('assets/logo-brand.png') }}" alt="Logo" class="h-8 w-auto">
                 <h2 class="text-lg font-semibold text-colordark dark:text-colorlight">Menu</h2>
                 <button @click="isOpen = false" class="text-gray-500 hover:text-red-500">
-                    <x-lucide-x class="w-5 h-5" />
+                    <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
             </div>
 
@@ -34,7 +34,7 @@
         text-colordark dark:text-colorlight
         group transition-all duration-200
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight">
-                        <x-lucide-layout-dashboard class="w-5 h-5 me-2" />
+                        <i data-lucide="layout-dashboard" class="w-5 h-5 me-2"></i>
                         <span>Dashboard</span>
                     </a>
                 </div>
@@ -49,8 +49,7 @@
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                         <div class="flex items-center">
-                            <x-lucide-layout-list class="w-5 h-5 me-2" />
-
+                            <i data-lucide="file-cog" class="w-5 h-5 me-2"></i>
                             <span>Operational</span>
                         </div>
                         <svg :class="{ 'rotate-180': open }"
@@ -99,7 +98,8 @@
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                         <div class="flex items-center">
-                            <x-lucide-settings-2 class="w-5 h-5 me-2" />
+                            <i data-lucide="settings-2" class="w-5 h-5 me-2"></i>
+
                             <span>Configuration</span>
                         </div>
                         <svg :class="{ 'rotate-180': open }"
@@ -158,7 +158,7 @@
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                         <div class="flex items-center">
-                            <x-lucide-history class="w-5 h-5 me-2" />
+                            <i data-lucide="history" class="w-5 h-5 me-2"></i>
 
                             <span>History</span>
                         </div>
