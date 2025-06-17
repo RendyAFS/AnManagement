@@ -1,11 +1,13 @@
-import './bootstrap';
+import "./bootstrap";
+import Swal from "sweetalert2";
+import Alpine from "alpinejs";
+import collapse from '@alpinejs/collapse'
 
-import Swal from 'sweetalert2'
-
-import Alpine from 'alpinejs';
-
+Alpine.plugin(collapse)
 window.Alpine = Alpine;
 
 Alpine.start();
 
+
 window.Swal = Swal;
+

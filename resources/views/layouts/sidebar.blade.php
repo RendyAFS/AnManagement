@@ -16,7 +16,7 @@
                     class="w-full bg-colorlightgrey rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary border-1 border-colordarkgrey"
                     placeholder="Search...">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <x-lucide-search class="w-4 h-4 text-fontdark" />
+                    <i data-lucide="search" class="w-4 h-4 text-fontdark"></i>
                 </div>
             </div>
         </div>
@@ -33,7 +33,8 @@
         text-colordark dark:text-colorlight
         group transition-all duration-200
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight">
-                    <x-lucide-layout-dashboard class="w-5 h-5 me-2" />
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 me-2"></i>
+
                     <span>Dashboard</span>
                 </a>
             </div>
@@ -48,7 +49,7 @@
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                     <div class="flex items-center">
-                        <x-lucide-layout-list class="w-5 h-5 me-2" />
+                        <i data-lucide="file-cog" class="w-5 h-5 me-2"></i>
 
                         <span>Operational</span>
                     </div>
@@ -97,7 +98,8 @@
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                     <div class="flex items-center">
-                        <x-lucide-settings-2 class="w-5 h-5 me-2" />
+                        <i data-lucide="settings-2" class="w-5 h-5 me-2"></i>
+
                         <span>Configuration</span>
                     </div>
                     <svg :class="{ 'rotate-180': open }"
@@ -155,7 +157,7 @@
         hover:bg-secondary hover:text-colorlight dark:hover:bg-secondary dark:hover:text-fontlight
         focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50">
                     <div class="flex items-center">
-                        <x-lucide-history class="w-5 h-5 me-2" />
+                        <i data-lucide="history" class="w-5 h-5 me-2"></i>
 
                         <span>History</span>
                     </div>

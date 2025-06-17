@@ -25,7 +25,7 @@
                 <x-slot name="content">
                     <x-dropdown-link :href="route('profile.edit')">
                         <div class="flex">
-                            <x-lucide-circle-user-round class="w-5 h-5 me-2" />
+                            <i data-lucide="circle-user-round" class="w-5 h-5 me-2"></i>
                             Profile
                         </div>
                     </x-dropdown-link>
@@ -54,7 +54,8 @@
                         @csrf
                         <x-dropdown-link href="#" onclick="confirmLogout(event)">
                             <div class="flex text-colorred font-bold">
-                                <x-lucide-log-out class="w-5 h-5 me-2 text-re" />
+                                <i data-lucide="log-out" class="w-5 h-5 me-2 text-re"></i>
+
                                 Log out
                             </div>
                         </x-dropdown-link>
