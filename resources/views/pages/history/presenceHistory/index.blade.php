@@ -1,5 +1,7 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('container')
     <div>
-        Page Presence History
+        Page Presences History
     </div>
-</x-app-layout>
+@endsection

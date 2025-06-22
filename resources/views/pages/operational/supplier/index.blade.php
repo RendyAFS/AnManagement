@@ -1,17 +1,24 @@
-<x-app-layout>
+@extends('layouts.app')
 
+@push('scripts')
+    @vite(['resources/js/pages/operational/supplier/main.js'])
+@endpush
+
+@section('container')
     <x-operational.modal-create title="Add Supplier" trigger="Supplier">
         {{-- <form action="{{ route('supplier.store') }}" method="POST"> --}}
         @csrf
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium">Supplier Name</label>
             <input type="text" name="name"
-                class="w-full mt-1 border rounded-lg px-3 py-2 focus:ring-1 focus:ring-secondary" required>
+                class="w-full mt-1 border rounded-lg px-3 py-2 focus:ring-1 focus:ring-secondary text-colordark"
+                placeholder="Name" required>
         </div>
 
         <div class="mb-4">
             <label for="address" class="block text-sm font-medium">Address</label>
-            <textarea name="address" class="w-full mt-1 border rounded-lg px-3 py-2 focus:ring-1 focus:ring-secondary" required></textarea>
+            <textarea name="address"
+                class="w-full mt-1 border rounded-lg px-3 py-2 focus:ring-1 focus:ring-secondary text-colordark" required></textarea>
         </div>
 
         <div class="flex justify-end">
@@ -28,42 +35,28 @@
         Page Supplier
     </div>
 
-    <table id="myTable" class="min-w-full divide-y divide-gray-200 text-sm text-left text-gray-800">
-        <thead class="bg-gray-100 text-xs uppercase text-gray-600">
+    <table id="example" class="row-border hover">
+        <thead>
             <tr>
-                <th class="px-6 py-3">Nama</th>
-                <th class="px-6 py-3">Email</th>
-                <th class="px-6 py-3 text-center">Aksi</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
             </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-            @foreach (range(1, 20) as $i)
+        <tbody>
+            @for ($i = 1; $i <= 100; $i++)
                 <tr>
-                    <td class="px-6 py-4 whitespace-nowrap">User {{ $i }}</td>
-                    <td class="px-6 py-4">user{{ $i }}@example.com</td>
-                    <td class="px-6 py-4 text-center">
-                        <button class="text-blue-500 hover:underline">Lihat</button>
-                    </td>
+                    <td>Employee {{ $i }}</td>
+                    <td>Position {{ $i }}</td>
+                    <td>Office {{ $i }}</td>
+                    <td>{{ rand(20, 60) }}</td>
+                    <td>{{ \Carbon\Carbon::now()->subDays(rand(1000, 5000))->format('Y-m-d') }}</td>
+                    <td>${{ number_format(rand(50000, 500000)) }}</td>
                 </tr>
-            @endforeach
+            @endfor
         </tbody>
     </table>
-
-
-    @push('scripts')
-        <script>
-            $(document).ready(function() {
-                new DataTable('#myTable', {
-                    responsive: true,
-                    perPage: 10,
-                    labels: {
-                        placeholder: "Cari...",
-                        perPage: "{select} data per halaman",
-                        noRows: "Tidak ada data yang tersedia",
-                        info: "Menampilkan {start} - {end} dari {rows} data",
-                    }
-                });
-            });
-        </script>
-    @endpush
-</x-app-layout>
+@endsection
