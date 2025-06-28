@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    <!-- DataTables v2.3.2 CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css" />
+
     <!-- Theme Init Script (harus di atas CSS) -->
     <script>
         if (localStorage.getItem('theme') === 'dark') {
@@ -31,6 +34,7 @@
 
     <!-- Scripts & Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body
@@ -49,9 +53,10 @@
 
             <!-- Main Content (scrollable area) -->
             <main class="flex-1 overflow-y-auto p-6">
-                {{ $slot }}
+                @yield('container')
                 @include('layouts.menu')
             </main>
+            @include('layouts.footer')
         </div>
     </div>
 
@@ -61,7 +66,15 @@
             lucide.createIcons();
         });
     </script>
-</body>
 
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+    <!-- DataTables v2.3.2 JS -->
+    <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
+
+    @stack('scripts')
+</body>
 
 </html>

@@ -1,5 +1,7 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('container')
     <div>
         Page Salary History
     </div>
-</x-app-layout>
+@endsection
