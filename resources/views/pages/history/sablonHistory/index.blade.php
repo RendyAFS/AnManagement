@@ -1,5 +1,7 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('container')
     <div>
         Page Sablon History
     </div>
-</x-app-layout>
+@endsection

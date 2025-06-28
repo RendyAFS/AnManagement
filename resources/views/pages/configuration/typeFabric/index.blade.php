@@ -1,5 +1,7 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('container')
     <div>
-        Page TypeFabric
+        Page Type Fabric
     </div>
-</x-app-layout>
+@endsection

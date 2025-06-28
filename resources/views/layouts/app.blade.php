@@ -19,8 +19,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- DataTables v2.3.2 CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.4/css/responsive.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css" />
 
     <!-- Theme Init Script (harus di atas CSS) -->
     <script>
@@ -54,7 +53,7 @@
 
             <!-- Main Content (scrollable area) -->
             <main class="flex-1 overflow-y-auto p-6">
-                {{ $slot }}
+                @yield('container')
                 @include('layouts.menu')
             </main>
             @include('layouts.footer')
@@ -69,13 +68,11 @@
     </script>
 
     <!-- jQuery CDN -->
-    {{-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> --}}
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
 
     <!-- DataTables v2.3.2 JS -->
     <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
-    <script src="https://cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.js"></script>
-    <script src="https://cdn.datatables.net/responsive/3.0.4/js/responsive.dataTables.js"></script>
 
     @stack('scripts')
 </body>

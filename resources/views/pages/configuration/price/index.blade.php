@@ -1,5 +1,7 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('container')
     <div>
         Page Price
     </div>
-</x-app-layout>
+@endsection

@@ -1,4 +1,6 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('container')
     <div>
         Page Dashboard <br>
         Page Dashboard <br>
@@ -85,4 +87,4 @@
         Page Dashboard <br>
         Page Dashboard <br>
     </div>
-</x-app-layout>
+@endsection
